@@ -1,0 +1,11 @@
+Porównaj wizualnie, jak ró»ne tryby szyfrowania wpªywaj¡ na widoczno±¢ struktury oryginalnego obrazu. Zwró¢ szczególn¡ uwag¦ na to, czy ksztaªty i wzory z oryginalnego obrazu s¡ nadal rozpoznawalne po zaszyfrowaniu.
+
+1. Deszyfrujemy wcześniej zaszyfrowany obraz korzystając z wcześniej wygenerowanego klucza i IV
+
+openssl enc -d -aes-128-cbc -iv 6849671ba01b86e99cd3e3a339d61e5e -in pixels2.enc -out pixels2.dec -K 8876f9037f04f705fd8344000bf12da4
+
+2. Łączymy zdeszyfrowaną wartość pixeli z naszym nagłówkiem
+cat header.bin pixels2.dec > zad6.bmp
+
+3. Można sprawdzić czy obrazek po deszyfrowaniu jest identyczny z oryginałem np. korzystając z diff lub sprawdzając hashe z md5sum
+
