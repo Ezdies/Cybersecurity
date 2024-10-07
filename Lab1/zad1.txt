@@ -1,0 +1,22 @@
+1.1 Do rozwi¡zania zadania wykorzystamy bibliotek¦ OpenSSL oraz ró»ne polecenia linuksowe. Zadanie dotyczy szyfrowania obrazu w trybie Electronic Code Book (ECB): ˆ Wczytanie obrazu: Zachowaj nagªówek pliku BMP (pierwsze 54 bajty) bez zmian (zapisz do pliku), poniewa» zawiera on metadane obrazu. ˆ Przygotowanie danych do szyfrowania: Wyodr¦bnij dane obrazu (piksele) zaczynaj¡c od bajtu 54 do ko«ca pliku. Upewnij si¦, »e dane do szyfrowania s¡ wielokrotno±ci¡ dªugo±ci bloku algorytmu AES (16 bajtów). Je±li nie s¡, odpowiednio je dopeªnij (np. bajtami zerowymi lub za pomoc¡ schematu paddingu PKCS#7). ˆ Szyfrowanie danych: Wygeneruj klucz szyfruj¡cy o dªugo±ci 16 bajtów (128 bitów). Mo»esz u»y¢ dowolnego ci¡gu bajtów lub funkcji generuj¡cej losowy klucz. U»yj algorytmu AES w trybie ECB do zaszyfrowania danych obrazu. Poª¡cz nagªówek pliku BMP z zaszyfrowanymi danymi, zapisz go do pliku ex11_ecb_enc.bmp.
+
+Kroki:
+1. Wydzielenie nagłówka z bitami odpowiedzialnymi za informacje o pliku, które nie odpowiadają za wygląd obrazka
+-wiemy, że header składa się z 54 bitów, także korzystamy do tego narzędzia dd 
+-dd if=plik_źródłowy of=plik_docelowy bs=ilość_bitów count=ilość_powtórzeń
+-dd if=plik_źródłowy of=plik_docelowy bs=ilość_bitów skip=ile_razy_pomijamy_bs
+-stat -c%s to wypisanie wielkości pliku jako string, potrzebny on jest do tego, żeby sprawdzić czy plik do szyfrowania nadaje się do podzielenia na równe bloki. Jak znamy wielkość bloków i podzielimy wielkość pliku na wielkość bloków i wyjdzie nam wynik bez reszty, to znaczy, że tak.
+dd if=bmp_24.bmp of=header.bin bs=54 count=1
+dd if=bmp_24.bmp of=pixels.bin bs=54 skip=1
+stat -c%s "pixels.bin"
+
+2. Szyfrowanie danych:
+-wygenerowanie klucza o wielkości 16 bitów w formie hex
+openssl rand -hex 16
+-zaszyfrowanie wydzielonej wcześniej wartości binarnej zawierającej wygląd pixeli wcześniej wygenerowanym kluczem w formie hex
+openssl enc -aes-128-ecb -in pixels.bin -out pixels.enc -K 8876f9037f04f705fd8344000bf12da4
+
+3. Połączenie nagłówka z zaszyfrowanymi danymi pixeli
+cat header.bin pixels.enc > zad1.bmp
+
+
