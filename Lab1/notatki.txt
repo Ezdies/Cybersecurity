@@ -1,0 +1,29 @@
+Kampus kod: 24cik25
+
+Wszystko potrzebne na kampusie
+
+-strona cvedetails.com - sprawdzanie podatności i wykorzystywanie ich
+-będziemy też sprawdzać jak się bronić z tego typu atakami
+-secure code review czyli patrzymy głównie patrzenie na błędy bezpieczeństwa
+-OSINT - próbowanie na serwery apache, które mają jakąś podatność, sprawdzanie na podstawie cienia gdzie zostało to zdjęcie zrobione (geoguessr vibe)
+-kryptografia, potem cybersecurity
+-robimy zadania z kampusa (openssl)
+-szyfrowanie symetryczne
+-szyfrowanie ecb- szyfrowanie blokowe, plaintext jest dzielony na bloki i do każdego blok jest szyfrowany kluczem i powstaje ciphertext
+-jak jest dzielone na bloki i nie ma takiej samej zawartości, to dodawany jest padding, który jest zerem, bo potrzebne jest, żeby były takiej samej długości
+-cbc- chaining. Na początek jest dodawany wektor inicjalizacyjny i wyjście z pierwszego bloku jest wektorem inicjalizacyjnym dla kolejnego bloku
+-kodowanie, a szyfrowanie:
+-w szyfrowaniu zawsze jest klucz i dostajemy po operacji nieczytelne znaki, do szyfrowaniu potrzebujemy klucza
+-kodowanie, to znamy jakim znakiem jest zastąpiony jakiś znak, wystarczy wiedzieć jaki znak odpowiada jakiemu
+-w dzisiejszym dniu będziemy szyfrować obrazek i będziemy patrzeć jak wpływają na niego różne tryby
+
+echo -n "HELLO" > plik.txt
+openssl rand -hex 16
+openssl enc -aes-128-ecb -in plik.txt -out plik.enc -K d686a71f9b9fa29b90084fd6ac3841a8 -a
+openssl enc -d -aes-128-ecb -in plik.enc -out plik.dec -K d686a71f9b9fa29b90084fd6ac3841a8 -a
+
+Zadanie1:
+-wydzielić odpowiednio dane nagłówka i dane danych
+-ręcznie dodać padding, żeby można było go podzielić na bloki
+-do paddingu można dodać /dev/zero
+-z oryginalnym nagłówkiem dodajemy prawdziwe dane i patrzymy jaki wynik będzie potem obrazu
