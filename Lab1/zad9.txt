@@ -1,0 +1,15 @@
+Jak zmiany w szyfrogramie wpªywaj¡ na tekst jawny? Celem zadania jest pokazanie, jak zmiany w zaszyfrowanych danych wpªywaj¡ na wynik odszyfrowywania, poprzez eksperymenty z mody kacj¡ bajtów w zaszyfrowanych plikach obrazów BMP. Wybierz kilka bajtów w zaszyfrowanym pliku (mo»e to by¢ np plik ex14_ofb_enc.bmp z zadania 1.4), które chcesz zmody kowa¢, pami¦taj¡c, aby mody kowa¢ bajty w sekcji danych obrazu (po nagªówku BMP), aby nie uszkodzi¢ struktury pliku. Nast¦pnie, u»ywaj¡c tego samego klucza i IV, które byªy u»yte podczas szyfrowania, odszyfruj zmody kowany plik. Porównaj oryginalny odszyfrowany obraz z odszyfrowanym obrazem po mody kacji.
+
+1. Szyfrujemy CBC z wcześniej wygenerowanym kluczem i IV
+openssl enc -aes-128-cbc -iv 6849671ba01b86e99cd3e3a339d61e5e -in pixels.bin -out pixels3.enc -K 8876f9037f04f705fd8344000bf12da4
+2. Korzystając z narzędzia xxd zmieniamy zaszyfrowaną wartość pixeli na wartość hex
+xxd pixels3.enc > pixels2.hex
+3. Korzystając z edytora tekstowego (tutaj vs code) zmieniamy wartość hex w jednym wierszu
+code pixels2.hex
+4. Odwracamy zmienioną wartość hex z powrotem na binarne
+xxd -r pixels2.hex > pixels.res
+5. Deszyfrujemy zmienioną wartość binarną korzystając z wcześniej wygenerowanego klucza i IV
+openssl enc -d -aes-128-cbc -iv 6849671ba01b86e99cd3e3a339d61e5e -in pixels.res -out pixels2res.dec -K 8876f9037f04f705fd8344000bf12da4
+6. Łączymy zmienioną wartość odszyfrowaną już z nagłówkiem
+cat header.bin pixels2res.dec > zad19.bmp
+7. Sprawdzamy i mimo, że zostało zaszyfrowane, to wartość niektórych pixeli została zmieniona
