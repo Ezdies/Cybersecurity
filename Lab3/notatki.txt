@@ -1,0 +1,18 @@
+faktoryzacja - rozkład liczby na czynniki pierwsze
+
+34 = 2 * 2 * 3 * 7 /faktoryzacja
+n = p * q
+
+p = liczba pierwsza
+q - liczba pierwsza
+
+n = 
+pub(e, n)
+pry(d, n)
+
+W kluczy prywatnym i kluczu publicznym jest część wspólna
+c - wiadomość która mamy zaszyszyfrowaną
+m - wiadomość którą szyfrujemy
+e - część klucza publicznego 
+d - część klucza prywatnego
+n - część wspólna klucza prywatnego i publicznego
