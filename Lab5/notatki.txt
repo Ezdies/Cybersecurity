@@ -1,0 +1,32 @@
+y^2 = x^3 + a*x + b (mod p), a = 2, b = 3, p = 13
+
+
+
+P(x1, y1), Q(x2, y2)
+
+(2 + 3) + 4 = 2 + (3 + 4)
+2 + 3 = 3 + 2
+Dodawanie na krzywych eliptycznych jest łączne i przemienne
+
+2 + 0 = 2
+Dodajemy punkt neutralny to nie ma wpływu na ten punkt
+2 + (-2) = 0
+Dla każdego punktu należy punkt przeciwny i jak go dodammy, to otrzymamy punkt neutralny w nieskończoności
+
+W pythonie możemy go reprezentować jako None, nie posiada współrzędnych x, y 
+
+Punkty na krzywej eliptycznej możemy dodawać na 2 sposoby:
+- gdy są różne to wzory
+- czy któryś z punktów jest punktem nieskończoności
+- gdy takie same to jest to podwojenie punktu i inne wzoru
+- gdy jest punkt przeciwny, to x jest taki sam, a y to -y % p 
+
+Wzory na obliczanie s - są operacje dzielenia. Nie można używać dzielenia mimo, że jest we wzorze, trzeba mnożyć przez element odwrotny - wzór
+
+Zad1.
+Punty które należą do krzywej muszą spełniać zależność
+Jeśli weżmiemy przykładowy x i y i dostaniemy równość, to będziemy mogli powiedzieć, że ten punkt należy do krzywej
+
+Za2.
+Rozwałzyć czy punkty są równe, różne i te inne przypadki
+Trzeba skorzystać ze wzorów po prostu, nie ma dzielenia tylko trzeba zrobić mnożenie przez odwrotność
