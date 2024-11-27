@@ -1,0 +1,10 @@
+1. Przez curl wysyłamy zapytanie post, aby założyć konto użytkownika. W tym celu uderzamy do endpointa umożliwiającego rejestrację i przesyłamy dane potrzebne do rejestracji za pomocą przełącznika -d
+
+curl -X POST http://172.17.0.2:1107/signup -H "Host: 172.17.0.2:1107" -H "Connection: keep alive" -d "email=john@example.com&password=password123"\n
+
+2. To samo, ale teraz robimy to dla endpointu logowania. Po zalogowaniu otrzymujemy token JWT użytkownika.
+
+curl -X POST http://172.17.0.2:1107/login -H "Host: 172.17.0.2:1107" -H "Connection: keep alive" -d "email=john@example.com&password=password123"\n
+
+3. Wysyłamy zapytanie get do endpointa user aby wyświetlić informacje o aktualnie zalogowanym użytkowniku i w tym celu w nagłówku dodajemy jego token jwt 
+curl -X GET http://172.17.0.2:1107/user -H "Host: 172.17.0.2:1107" -H "Connection: keep alive" -H "x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwdWJsaWNfaWQiOiI3YjIyYzk1My01OTRjLTQxYjEtOTA4YS05ODQ5ZWUwZjhjY2YiLCJleHAiOjE3MzI1MzM2OTB9.FdYHsk4Dfl_IoRx6kSLVqJOvmaDrYv-BjYwTzikMWEk"\n
