@@ -1,0 +1,57 @@
+
+---Zad 10.4
+ssh root@localhost -p 2022
+Bo można się zalogować na dwa sposoby, na login i hasło oraz z użyciem klucza
+Dlatego można spróbować dodać własny klucz publiczny do authorized keys
+Najpierw sprawdzamy który użytkownik jest aktualnie zalogowany whoami
+Sprawdzamy klucze poprzez ls/user-data/.ssh
+generujemy własny klucz ssh żeby dodać go do authorized keys
+ssh-keygen
+kopiujemy klucz publiczny i dopisujemy do listy kluczy  na serwerze
+echo -n "klucz" >> /www-data/.ssh/authorized_keys
+Trzeba zmienić, żeby nie było że hacker
+Działa dopisywanie z opcją write
+Dostajemy się na serwer za pomocą dodanego klucza
+ssh www-data@localhost -p 2022 -i test
+^ to niekoniecznie dobrze zrobione, bo jest permission denied, ale działa tylko dlatego, bo ma uprawnienia write
+
+Innym sposobem jest wyświetlenie kogoś klucza publicznego/prywatnego
+cat /www-data/.ssh/ id_rsa
+Kopiujemy klucz poprzez źródło strony
+Zapisujemy do pliku go
+ssh root@localhost -p 2022 -i klucz_zapisany_do_pliku
+Jest problem bad permissions dla naczego zapisanego klucza prywatnego
+chmod 400 klucz priv
+logout wylogowanie
+
+---Zad 10.5
+docker run -dp 42013:80 mazurkatarzyna/cve-2021-42013
+Path traversal, żeby znaleźć endpointy dostępne na serwerze
+Znajdujemy payloady to path traversal na githubie
+Używamy burp suite do tego, zeby użyć tego payloada jako słownik i będzie nam od sam podstawiał odpowiednie linijki i sprawdzi który zwróci kod 200
+Przechodzimy do proxy
+Open browser i wklejamy tam nasz link 
+Wchodzimy do http history
+Wchodzimy do mojego requesta i przechodzimy do send to intruder
+Zaznaczamy to co chcemy podmieniać i zaznaczamy add
+Przechodzimy do payloads i dodajemy nasz payloads 
+W payload dajemy simple list i dajemy list w payload settings
+Start attack
+Szukamy 200
+
+Nie było w payloadzie odpowiedniego linku
+
+Więc robimy telnet 127.0.0.1 42013
+I potem przeklejamy nasz request 
+Działa to w ten sposób, że przechodzimy za pomocą path traversal do katalogu bin/sh i potem możemy dowolne polecenie wykonywać tam
+
+---Zad 10.7
+
+127.0.0.1:3003/install.php
+
+Instalujemy to, potem dodajemy plugin i jak zuploadujemy index.php z payloadem, to można robić to co w pierwszym zadaniu z tego pliku
+
+
+
+
+

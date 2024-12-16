@@ -1,0 +1,20 @@
+INFO:root:POST request,
+Path: /
+Headers:
+Host: 127.0.0.1:9999
+Connection: keep-alive
+Content-Length: 0
+sec-ch-ua-platform: "Linux"
+User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36
+sec-ch-ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"
+DNT: 1
+sec-ch-ua-mobile: ?0
+Accept: */*
+Origin: http://127.0.0.1:9095
+Sec-Fetch-Site: same-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:9095/
+Accept-Encoding: gzip, deflate, br, zstd
+Accept-Language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7
+Cookie: access-token=eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoicm9vdCIsImlzcyI6Im1lbW9zIiwic3ViIjoiMSIsImF1ZCI6WyJ1c2VyLmFjY2Vzcy10b2tlbiJdLCJleHAiOjE3MzI3ODg5OTAsImlhdCI6MTczMjcwMjU5MH0.nox-xu58FB_DHT_y-NiPuzQ7UFNyrBCDVU6dTn3tRvk; refresh-token=eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoicm9vdCIsImlzcyI6Im1lbW9zIiwic3ViIjoiMSIsImF1ZCI6WyJ1c2VyLnJlZnJlc2gtdG9rZW4iXSwiZXhwIjoxNzMzMzA3MzkwLCJpYXQiOjE3MzI3MDI1OTB9.2tnFCO8S11wecaNq7hDI7pVz2xaYT2dDydFeWkzPf_8; memos_session=MTczMzEzODE2MHxEdi1CQkFFQ180SUFBUkFCRUFBQUh2LUNBQUVHYzNSeWFXNW5EQWtBQjNWelpYSXRhV1FEYVc1MEJBSUFCQT09fHqD2--KrTtI1Rog8sZvbL_jwKZaGFjRNEuJ6lTUxS59

