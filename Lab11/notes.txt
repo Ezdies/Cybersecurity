@@ -1,0 +1,50 @@
+5.1
+
+bandit - static secure code review
+Docker pull
+Docker run 
+uruchamiany python ex51
+
+Trzeba sprawdzić jakie są tutaj słabości i jak można to zmienić, żeby było bezpieczniejsze
+
+Podatne na xss, bo użytkownik zamiast username może wpisać zamiast username wszystko co chce
+Używamy pickle który nie jest bezpieczny sam w sobie
+
+Sprawdzanie w burp
+-proxy
+-przeglądarka w burpie
+-requesty do reapeatera
+-zamiast username można wztawić zakodowany w base64 payload xss przez repeatera 
+-żeby to zrobić w tym przypadku trzeba również to zserializować za pomocą pickle:
+
+import base64
+import pickle
+
+text = "<script> alert("XSS"); </script> "
+s_text = pickle.dumps(text)
+e_text = base64.b64encode(s_text).decode('uft-8')
+
+print(e_text)
+
+W narzędziach programistycznych można zrobić edit and resend i można zmienić też tam cookiesy
+
+
+5.2
+Możemy przekazać dowolny string do funkcji serializującej
+Więc powinniśmy lepiej go zwalidować najpierw, żeby nie dało się zrobić payloadów xss
+PrintStackTrace jest niebezpieczne do wykorzystywania na serwerze, bo mogą zwrócić niebezpieczne informacje
+
+5.3
+Iter jest parametrem w endpoincie i można go zmienić poprzez link
+Jak zmienimy paremetr iteracji na jakiś duży, to można zrobić jakiegoś ddosa
+
+Kolejna podatność jest taka, że jako parametr przy endpoincie /helloworld można podać jakąś podatność w payloadzie xss
+
+5.4
+
+Jest tam path traversal
+
+5.5
+Można przeprowadzić atak MITM, bo nie jest sprawdzany hostname i można się podłączyć do jakiego serweru jakiego chcemy
+
+5.6
